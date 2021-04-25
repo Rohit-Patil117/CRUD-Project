@@ -1,8 +1,8 @@
 import './App.css';
-import Insert from './Insert';
-import Fetch from './Fetch';
-import Delete from './Delete';
-import Update from './Update';
+import Insert from './components/Insert';
+import Fetch from './components/Fetch';
+import Delete from './components/Delete';
+import Update from './components/Update';
 import { BrowserRouter, Route, Link } from 'react-router-dom';
 import { Button } from '@material-ui/core';
 
