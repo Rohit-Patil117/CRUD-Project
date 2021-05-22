@@ -27,3 +27,7 @@
     font-weight: normal;
     font-size: 15px;
 }
+
+.delete-icon{
+  cursor: pointer;
+}

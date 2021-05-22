@@ -6,11 +6,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 const student_info = require('./model/student_info');
 
-mongoose.connect('mongodb://localhost:27017/students', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect('mongodb+srv://rohit_patil:Jm3i0ZhKXnZlDWEd@cluster0.ae10b.mongodb.net/students?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true });
 
 app.post('/insert', function (req, res) {
     var data = new student_info({
-        _id: new mongoose.Types.ObjectId(),
+        _id: new mongoose.Types.ObjectId(), 
         s_id: req.body.s_id,
         s_firstname: req.body.s_firstname,
         s_lastname: req.body.s_lastname,

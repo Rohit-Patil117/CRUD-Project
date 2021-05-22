@@ -13,11 +13,11 @@ function App() {
         <BrowserRouter>
           <Link to=""><Button color="primary">Insert</Button></Link>
           <Link to="/update"><Button>Update</Button></Link>
-          <Link to="/delete"><Button color="secondary">Delete</Button></Link>
+          {/* <Link to="/delete"><Button color="secondary">Delete</Button></Link> */}
 
           <Route exact path="/" component={Insert}/>
           <Route path="/update" component={Update}/>
-          <Route path="/delete" component={Delete}/>
+          {/* <Route path="/delete" component={Delete}/> */}
           
         </BrowserRouter>
       </div>

@@ -1,5 +1,6 @@
-import React from 'react'
-import axios from 'axios'
+import React from 'react';
+import axios from 'axios';
+import DeleteIcon from '@material-ui/icons/Delete';
 
 export default class Fetch extends React.Component {
     constructor() {
@@ -19,6 +20,14 @@ export default class Fetch extends React.Component {
 
     }
 
+    submit(id){
+        if (window.confirm('Are you sure to delete this user?')) {
+            axios.delete('http://localhost:4000/delete/' + id).then(result => {
+                document.location.reload(true);
+            }).catch(err => console.log(err));
+        }
+    }
+
     render() {
         return (
             <div>
@@ -33,6 +42,7 @@ export default class Fetch extends React.Component {
                             <th>Branch</th>
                             <th>City</th>
                             <th>Aggregate</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -45,6 +55,7 @@ export default class Fetch extends React.Component {
                                 <td>{el.s_branch}</td>
                                 <td>{el.s_city}</td>
                                 <td>{el.s_Aggregate}</td>
+                                <td><DeleteIcon className="delete-icon" onClick={() => { this.submit(el.s_id) }} /></td>
                             </tr>
                         ))}
 
