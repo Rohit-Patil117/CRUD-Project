@@ -10,7 +10,7 @@ mongoose.connect('mongodb+srv://rohit_patil:Jm3i0ZhKXnZlDWEd@cluster0.ae10b.mong
 
 app.post('/insert', function (req, res) {
     var data = new student_info({
-        _id: new mongoose.Types.ObjectId(), 
+        _id: new mongoose.Types.ObjectId(),
         s_id: req.body.s_id,
         s_firstname: req.body.s_firstname,
         s_lastname: req.body.s_lastname,
@@ -41,7 +41,7 @@ app.delete('/delete/:s_id', function (req, res) {
     });
 });
 
-app.put('/update/:s_id', function (req, res) {
+app.patch('/update/:s_id', function (req, res) {
     student_info.updateOne(
         { s_id: req.params.s_id },
         {
